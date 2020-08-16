@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <section id="contenido" class="">
+        <div id="" class="">
+            <h1 class="">Data Binding</h1>
+            <p>La vinculación de datos es el mecanismo que vincula la interfaz de usuario o la interfaz de usuario de las aplicaciones a los modelos. Mediante Data Binding, el usuario podrá manipular los elementos presentes en el sitio web utilizando el navegador. Por lo tanto, siempre que se haya cambiado alguna variable, ese cambio en particular debe reflejarse en el Modelo de objetos de documento o DOM .</p>
+            <p>En Angular , Data Binding define la interacción entre los componentes y el DOM. El enlace de datos es parte de todas las versiones de Angular, desde AngularJS hasta la última versión de Angular 9 .</p>
+        </div>
+        <div >
+            <h3>Tipos de enlace de datos en angular</h3>
+            <p>Angular permite el enlace de datos unidireccional y bidireccional. El enlace de datos unidireccional es un tipo simple de enlace de datos en el que se le permite manipular las vistas a través de los modelos. Esto implica que realizar cambios en el código de TypeScript se verá reflejado en el HTML correspondiente . En Angular, el enlace de datos unidireccional se logra mediante:</p>
+            <ul>
+                <li>Interpolación o interpolación de cadenas</li>
+                <li>Vinculación de propiedad</li>
+                <li>Enlace de eventos</li>
+            </ul>
+            <p>El enlace de datos bidireccional, por otro lado, permite la sincronización de datos de tal manera que las vistas se pueden actualizar usando los modelos y los modelos se pueden actualizar usando vistas. Esto significa que su aplicación podrá compartir información entre una clase de componente y su plantilla.</p>
+        </div>
+        <div>
+            <h3>Enlace de datos unidireccional</h3>
+            <p>En la vinculación de datos unidireccional, los datos fluyen solo en una dirección, es decir, de los modelos a las vistas. Como se mencionó anteriormente, el enlace de datos unidireccional en Angular puede ser de tres tipos, es decir, interpolación, enlace de propiedad y enlace de eventos.</p>
+        </div>
+        <div>
+            <h3>Enlace de interpolación</h3>
+            <p>El enlace de interpolación se utiliza para devolver la salida HTML del código TypeScript, es decir, de los componentes a las vistas. Aquí, la expresión de la plantilla se especifica entre llaves dobles. Mediante la interpolación, se pueden agregar cadenas al texto que está presente entre las etiquetas de elementos HTML y dentro de las asignaciones de atributos. Estas cadenas se calculan mediante expresiones de plantilla. </p>
+        </div>
+        <h3>EJEMPLO:</h3>
+        <div class="codigo">
+            <p>&lt;h1&gt; &#123; &#123; title &#125; &#125; &lt;/h1&gt;</p>
+            <p>Learn &lt;b&gt; &#123; &#123; course &#125; &#125;</p>
+            <p>&lt;/b&gt; with Edureka.</p>
+            <p>2 * 2 = &#123;&#123;2 * 2&#125;&#125;</p>
+            <p>&lt;div&gt;&lt;img src="&#123; &#123; image &#125; &#125;"&gt;&lt;/div&gt;</p>
+        </div>
+        <p>La parte de TypeScript de este código es la siguiente:</p>
+        <div class="codigo">
+            <p>export class AppComponent &#123;</p>
+            <p>title = 'Databinding';</p>
+            <p>course ='Angular';</p>
+            <p>image = 'paste the url here'</p>
+            <p>&#125;</p>
+        </div>
+    </section>
+</div>

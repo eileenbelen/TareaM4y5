@@ -1,0 +1,100 @@
+<div class="container-fluid">
+    <section id="contenido" class="">
+        <div id="" class="">
+            <h1 class="">Enrutamiento y Navegacion</h1>
+            <h3 class="">
+                Prerrequisitos
+            </h3>
+            <p>Antes de crear una ruta, debe estar familiarizado con lo siguiente:</p>
+            <ul>
+                <li>Conceptos básicos de componentes</li>
+                <li>Conceptos básicos de las plantillas</li>
+                <li>Una aplicación angular: puede generar una aplicación angular básica utilizando la CLI de Angular</li>
+
+            </ul>
+        </div>
+        <div >
+            <h3 >
+                Genere una aplicación con el enrutamiento habilitado
+            </h3>
+            <p>El siguiente comando usa la CLI de Angular para generar una aplicación Angular básica con un módulo de enrutamiento de aplicaciones, llamado AppRoutingModule, que es un NgModule donde puede configurar sus rutas. El nombre de la aplicación en el siguiente ejemplo es routing-app.</p>
+            <p class="codigo">ng new routing-app --routing</p>
+        </div>
+        <div >
+            <h3 >
+                Agregar componentes para enrutamiento
+            </h3>
+            <p>Para usar el enrutador angular, una aplicación debe tener al menos dos componentes para que pueda navegar de uno a otro.</p>
+        </div>
+        <div >
+            <h3>Importando sus nuevos componentes</h3>
+            <p>Para usar sus nuevos componentes, impórtelos AppRoutingModuleen la parte superior del archivo, de la siguiente manera:</p>
+            <div class="codigo">
+                <p>import  &#123; FirstComponent &#125; from './first/first.component';</p>
+                <p>import  &#123; SecondComponent &#125; from './second/second.component';</p>
+            </div>
+        </div>
+        <div >
+            <h3>Definiendo una ruta básica</h3>
+            <p>Hay tres bloques de construcción fundamentales para crear una ruta.</p>
+            <p>Importe el AppRoutingModule en el archivo AppModule y agréguelo a la matriz imports.</p>
+            <div class="codigo">
+                <p>import &#123; BrowserModule &#125; from '@angular/platform-browser';</p>
+                <p>import &#123; NgModule &#125; from '@angular/core';</p>
+                <p>import &#123; AppRoutingModule &#125; from './app-routing.module';</p>
+                <p>import &#123; AppComponent &#125; from './app.component';</p>
+                <p>@NgModule(&#123;</p>
+                <p>&nbsp; declarations: [</p>
+                <p>&nbsp; &nbsp; AppComponent</p>
+                <p>&nbsp; ],</p>
+                <p>&nbsp; imports: [</p>
+                <p>&nbsp; &nbsp; BrowserModule,</p>
+                <p>&nbsp; &nbsp; AppRoutingModule </p>
+                <p>&nbsp; ],</p>
+                <p>&nbsp; &nbsp; providers: [],</p>
+                <p>&nbsp; &nbsp; bootstrap: [AppComponent]</p>
+                <p>&nbsp; &#125;)</p>
+                <p>&nbsp; export class AppModule &#123; &#125;</p>
+            </div>
+        </div>
+        <div >
+            <h3>1. Importe RouterModuley Routesa su módulo de enrutamiento.</h3>
+            <p>La CLI de Angular realiza este paso automáticamente. La CLI también configura una Routesmatriz para sus rutas y configura las matrices importsy exportspara .@NgModule()</p>
+            <div class="codigo">
+                <p>import &#123; NgModule &#125; from '@angular/core';</p>
+                <p>import &#123; Routes, RouterModule &#125; from '@angular/router'; // CLI imports router</p>
+                <p>const routes: Routes = []; // sets up routes constant where you define your routes</p>
+                <p>@NgModule(&#123;</p>
+                <p>imports: [RouterModule.forRoot(routes)],</p>
+                <p>exports: [RouterModule]</p>
+                <p>&#125;)</p>
+                <p>&nbsp; export class AppRoutingModule  &#123; &#125;</p>
+            </div>
+        </div>
+        <div >
+            <h3>2. Defina sus rutas en su matriz Routes.</h3>
+            <p>Cada ruta de esta matriz es un objeto JavaScript que contiene dos propiedades. La primera propiedad, pathdefine la ruta URL de la ruta. La segunda propiedad componentdefine el componente que Angular debe usar para la ruta correspondiente.</p>
+            <div class="codigo">
+                <p>const routes: Routes = [</p>
+                <p>&nbsp; &#123; path: 'first-component', component: FirstComponent &#125;,</p>
+                <p>&nbsp; &#123; path: 'second-component', component: SecondComponent &#125;,</p>
+                <p>];</p>
+            </div>
+        </div>
+        <div >
+            <h3>3. Agrega tus rutas a tu aplicación.</h3>
+            <p>Ahora que ha definido sus rutas, puede agregarlas a su aplicación. Primero, agregue enlaces a los dos componentes. Asigne la etiqueta de anclaje a la que desea agregar la ruta al routerLinkatributo. Establezca el valor del atributo en el componente para que se muestre cuando un usuario hace clic en cada enlace. A continuación, actualice la plantilla de su componente para incluir . Este elemento informa a Angular que actualice la vista de la aplicación con el componente para la ruta seleccionada.&lt;router-outlet&gt;</p>
+            <div class="codigo">
+                <p>&lt;h1&gt;Angular Router App&lt;/h1&gt;</p>
+                <p>&nbsp; &lt;nav&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &lt;ul&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a routerLink="/first-component" routerLinkActive="active"&gt;First Component&lt;/a&gt;&lt;/li&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a routerLink="/second-component" routerLinkActive="active"&gt;Second Component&lt;/a&gt;&lt;/li&gt;</p>
+                <p>&nbsp; &nbsp; &nbsp; &lt;/ul&gt;</p>
+                <p>&nbsp; &lt;/nav&gt;</p>
+                <p>&lt;router-outlet&gt;&lt;/router-outlet&gt;</p>
+                
+            </div>
+        </div>
+    </section>
+</div>
